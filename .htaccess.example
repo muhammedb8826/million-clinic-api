@@ -1,0 +1,8 @@
+# Only needed if your VPS uses Apache with .htaccess (not nginx).
+# Hostinger VPS with Docker usually uses nginx or OpenLiteSpeed — see deploy/nginx.example.conf
+
+<IfModule mod_security2.c>
+  SecRule REQUEST_URI "@beginsWith /upload" "id:10001,phase:1,pass,nolog,ctl:ruleEngine=Off"
+</IfModule>
+
+LimitRequestBody 268435456

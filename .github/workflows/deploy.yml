@@ -1,0 +1,34 @@
+name: Deploy Strapi Portal
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/charity-portal
+            git pull origin main
+            
+            # Create the shared network if it doesn't exist
+            docker network inspect charity-shared-network >/dev/null 2>&1 || \
+            docker network create charity-shared-network
+
+            # Build and restart using the same config that worked locally
+            # Note: We pass the production URL as a build arg
+            docker compose build --build-arg PUBLIC_URL=https://api.makofoundation.us
+            docker compose up -d
+            
+            # Prune old images to save space on the VPS
+            docker image prune -f

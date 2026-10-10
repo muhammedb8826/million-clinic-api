@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_layout_main_menus",
+  "info": {
+    "displayName": "Main Menu"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "darkLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "menu": {
+      "type": "component",
+      "component": "components.link",
+      "repeatable": true
+    },
+    "subMenu": {
+      "type": "component",
+      "component": "components.dropdown",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "components.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_slides",
+  "info": {
+    "displayName": "Slides"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

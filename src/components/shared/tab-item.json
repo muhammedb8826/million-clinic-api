@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_tab_items",
+  "info": {
+    "displayName": "Tab Item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-plugin-iconhub.iconhub",
+      "options": {
+        "storeIconData": true,
+        "storeIconName": true
+      }
+    },
+    "featuredCard": {
+      "type": "component",
+      "component": "components.feature-card",
+      "repeatable": true
+    },
+    "textContent": {
+      "type": "component",
+      "component": "shared.rich-text",
+      "repeatable": true
+    },
+    "link": {
+      "type": "component",
+      "component": "components.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_video_sections",
+  "info": {
+    "displayName": "Video section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "video": {
+      "type": "component",
+      "component": "shared.video",
+      "repeatable": false
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "full-width",
+        "contained",
+        "background"
+      ]
+    }
+  },
+  "config": {}
+}

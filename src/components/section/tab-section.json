@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_section_tab_sections",
+  "info": {
+    "displayName": "Tab Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "tabs": {
+      "type": "component",
+      "component": "shared.tab-item",
+      "repeatable": true
+    },
+    "defaultActiveTab": {
+      "type": "integer"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "underline",
+        "pills",
+        "boxed",
+        "vertical"
+      ]
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "full-width"
+      ]
+    }
+  },
+  "config": {}
+}

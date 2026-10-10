@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "donates",
+  "info": {
+    "singularName": "donate",
+    "pluralName": "donates",
+    "displayName": "Donate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "section.tab-section",
+        "components.slides",
+        "section.video-section",
+        "section.testimonials",
+        "section.stats",
+        "section.gallery",
+        "section.features",
+        "section.cta",
+        "section.content",
+        "section.cards",
+        "section.accordions",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media"
+      ]
+    }
+  }
+}

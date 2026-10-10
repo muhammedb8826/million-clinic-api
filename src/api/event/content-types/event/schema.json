@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "events"
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "eventStatus": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "upcoming",
+        "ongoing",
+        "past",
+        "cancelled"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "organizer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::board-member.board-member"
+    },
+    "location": {
+      "type": "component",
+      "component": "components.address",
+      "repeatable": false
+    },
+    "speakers": {
+      "type": "component",
+      "component": "components.speaker",
+      "repeatable": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "summary": {
+      "type": "text"
+    }
+  }
+}
