@@ -32,8 +32,8 @@ export default {
     ],
      translations: {
       en: {
-        "Auth.form.welcome.title": "Welcome to Mako Foundation Portal!",
-        "Auth.form.welcome.subtitle": "Log in to your Mako Foundation Portal dashboard",
+        "Auth.form.welcome.title": "Welcome to Million Clinic Portal!",
+        "Auth.form.welcome.subtitle": "Log in to your Million Clinic Portal dashboard",
       },
     },
   },
