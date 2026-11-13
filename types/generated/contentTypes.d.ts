@@ -973,6 +973,54 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiServiceService extends Struct.SingleTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banner: Schema.Attribute.Media<'images'>;
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'section.video-section',
+        'section.testimonials',
+        'section.tab-section',
+        'section.stats',
+        'section.gallery',
+        'section.features',
+        'section.cta',
+        'section.content',
+        'section.cards',
+        'section.accordions',
+        'shared.media',
+        'shared.rich-text',
+        'shared.quote',
+        'components.slides',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSubmissionSubmission extends Struct.CollectionTypeSchema {
   collectionName: 'submissions';
   info: {
@@ -1527,6 +1575,7 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::project.project': ApiProjectProject;
+      'api::service.service': ApiServiceService;
       'api::submission.submission': ApiSubmissionSubmission;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
