@@ -482,7 +482,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    link: Schema.Attribute.Component<'components.link', false>;
+    link: Schema.Attribute.Component<'components.link', true>;
     media: Schema.Attribute.Media<'images' | 'videos'>;
     subHeading: Schema.Attribute.String;
   };
