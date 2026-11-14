@@ -37,7 +37,12 @@
         "shared.media",
         "shared.rich-text",
         "shared.quote",
-        "components.slides"
+        "components.slides",
+        "section.teams",
+        "section.projects",
+        "section.partners",
+        "section.news",
+        "section.events"
       ]
     },
     "seo": {

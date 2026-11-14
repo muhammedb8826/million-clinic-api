@@ -11,16 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article"
-    },
-    "projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::project.project"
-    },
     "seo": {
       "type": "component",
       "component": "shared.seo",
@@ -42,13 +32,13 @@
         "shared.rich-text",
         "shared.quote",
         "shared.media",
-        "section.tab-section"
+        "section.tab-section",
+        "section.teams",
+        "section.partners",
+        "section.news",
+        "section.events",
+        "section.projects"
       ]
-    },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event"
     }
   }
 }

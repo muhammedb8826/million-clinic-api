@@ -496,6 +496,11 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         'section.video-section',
         'section.cards',
         'section.tab-section',
+        'section.teams',
+        'section.projects',
+        'section.partners',
+        'section.news',
+        'section.events',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -766,7 +771,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     blocks: Schema.Attribute.DynamicZone<
       [
         'section.testimonials',
@@ -783,16 +787,19 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
         'shared.quote',
         'shared.media',
         'section.tab-section',
+        'section.teams',
+        'section.partners',
+        'section.news',
+        'section.events',
+        'section.projects',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
-    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -962,6 +969,11 @@ export interface ApiServiceService extends Struct.SingleTypeSchema {
         'shared.rich-text',
         'shared.quote',
         'components.slides',
+        'section.teams',
+        'section.projects',
+        'section.partners',
+        'section.news',
+        'section.events',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

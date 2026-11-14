@@ -129,6 +129,14 @@ export interface ComponentsLink extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsNews extends Struct.ComponentSchema {
+  collectionName: 'components_components_news';
+  info: {
+    displayName: 'News';
+  };
+  attributes: {};
+}
+
 export interface ComponentsSlides extends Struct.ComponentSchema {
   collectionName: 'components_components_slides';
   info: {
@@ -279,6 +287,18 @@ export interface SectionCta extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionEvents extends Struct.ComponentSchema {
+  collectionName: 'components_section_events';
+  info: {
+    displayName: 'Events';
+  };
+  attributes: {
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_features';
   info: {
@@ -298,6 +318,42 @@ export interface SectionGallery extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionNews extends Struct.ComponentSchema {
+  collectionName: 'components_section_news';
+  info: {
+    displayName: 'News';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionPartners extends Struct.ComponentSchema {
+  collectionName: 'components_section_partners';
+  info: {
+    displayName: 'Partners';
+  };
+  attributes: {
+    partners: Schema.Attribute.Relation<'oneToMany', 'api::partner.partner'>;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionProjects extends Struct.ComponentSchema {
+  collectionName: 'components_section_projects';
+  info: {
+    displayName: 'Projects';
+  };
+  attributes: {
+    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
+    subTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -326,6 +382,18 @@ export interface SectionTabSection extends Struct.ComponentSchema {
     variant: Schema.Attribute.Enumeration<
       ['underline', 'pills', 'boxed', 'vertical']
     >;
+  };
+}
+
+export interface SectionTeams extends Struct.ComponentSchema {
+  collectionName: 'components_section_teams';
+  info: {
+    displayName: 'Teams';
+  };
+  attributes: {
+    subTitle: Schema.Attribute.String;
+    teams: Schema.Attribute.Relation<'oneToMany', 'api::team.team'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -468,6 +536,7 @@ declare module '@strapi/strapi' {
       'components.feature-card': ComponentsFeatureCard;
       'components.footer-column': ComponentsFooterColumn;
       'components.link': ComponentsLink;
+      'components.news': ComponentsNews;
       'components.slides': ComponentsSlides;
       'components.speaker': ComponentsSpeaker;
       'components.stat': ComponentsStat;
@@ -479,10 +548,15 @@ declare module '@strapi/strapi' {
       'section.cards': SectionCards;
       'section.content': SectionContent;
       'section.cta': SectionCta;
+      'section.events': SectionEvents;
       'section.features': SectionFeatures;
       'section.gallery': SectionGallery;
+      'section.news': SectionNews;
+      'section.partners': SectionPartners;
+      'section.projects': SectionProjects;
       'section.stats': SectionStats;
       'section.tab-section': SectionTabSection;
+      'section.teams': SectionTeams;
       'section.testimonials': SectionTestimonials;
       'section.video-section': SectionVideoSection;
       'shared.media': SharedMedia;

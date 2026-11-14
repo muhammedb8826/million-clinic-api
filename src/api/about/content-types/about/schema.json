@@ -39,7 +39,12 @@
         "components.slides",
         "section.video-section",
         "section.cards",
-        "section.tab-section"
+        "section.tab-section",
+        "section.teams",
+        "section.projects",
+        "section.partners",
+        "section.news",
+        "section.events"
       ]
     },
     "seo": {
