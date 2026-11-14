@@ -274,7 +274,7 @@ export interface SectionCta extends Struct.ComponentSchema {
   attributes: {
     backgroundImage: Schema.Attribute.Media<'images'>;
     description: Schema.Attribute.String;
-    link: Schema.Attribute.Component<'components.link', false>;
+    link: Schema.Attribute.Component<'components.link', true>;
     title: Schema.Attribute.String;
   };
 }

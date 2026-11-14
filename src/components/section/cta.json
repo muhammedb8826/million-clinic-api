@@ -14,7 +14,7 @@
     "link": {
       "type": "component",
       "component": "components.link",
-      "repeatable": false
+      "repeatable": true
     },
     "backgroundImage": {
       "type": "media",

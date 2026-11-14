@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "board_members",
+  "collectionName": "teams",
   "info": {
-    "singularName": "board-member",
-    "pluralName": "board-members",
-    "displayName": "Board Member"
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team"
   },
   "options": {
     "draftAndPublish": true

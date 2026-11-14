@@ -59,11 +59,6 @@
       "component": "shared.seo",
       "repeatable": false
     },
-    "organizer": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::board-member.board-member"
-    },
     "location": {
       "type": "component",
       "component": "components.address",
@@ -79,6 +74,11 @@
     },
     "summary": {
       "type": "text"
+    },
+    "organizer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
     }
   }
 }
